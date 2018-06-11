@@ -1,0 +1,4 @@
+.DS_Store
+node_modules/
+keysearch.safariextension/*.js
+keysearch.safariextz
