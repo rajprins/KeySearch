@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Roy Prins</string>
 	<key>Builder Version</key>
-	<string>13605.2.8</string>
+	<string>12602.1.50.0.10</string>
 	<key>CFBundleDisplayName</key>
 	<string>KeySearch</string>
 	<key>CFBundleIdentifier</key>
@@ -81,7 +81,7 @@
 	<key>Description</key>
 	<string>Use keywords to quickly search any site from the toolbar</string>
 	<key>DeveloperIdentifier</key>
-	<string>TP737ZY7FM</string>
+	<string>6M853ET88Q</string>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
 	<key>Permissions</key>
@@ -95,8 +95,8 @@
 		</dict>
 	</dict>
 	<key>Update Manifest URL</key>
-	<string>http://www.macosxtips.co.uk/keysearch/keysearch.plist</string>
+	<string>https://raw.githubusercontent.com/rajprins/KeySearch/master/keysearch.safariextension/keysearch.plist</string>
 	<key>Website</key>
-	<string>https://github.com/rajprins/keysearch</string>
+	<string></string>
 </dict>
 </plist>
