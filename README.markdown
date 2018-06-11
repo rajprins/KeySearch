@@ -2,8 +2,6 @@
 
 **_A keyword search extension for Safari._**
 
-**[Download](http://www.macosxtips.co.uk/keysearch)**
-
 ## Introduction
 
 **_KeySearch_ adds a new way of searching the Internet to Safari.** It uses short keywords to allow you to search any site you want, right from the toolbar.
