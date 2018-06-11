@@ -9,7 +9,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>KeySearch</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.macosxtips.keysearch</string>
+	<string>com.twomobiledudes.keysearch</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
