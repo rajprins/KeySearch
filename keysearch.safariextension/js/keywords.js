@@ -63,7 +63,7 @@ function addToList(data) {
 
 function bindEditForm(data) {
 	const form = dataToForm(data);
-	$('.iPhoneCheckContainer').show();
+	$('.toggleBoxContainer').show();
 	$('#keyword').width(200);
 	$('#save').attr('disabled', true);
 	if (data.keyword == 'default') {
@@ -106,7 +106,7 @@ function bindNewForm() {
 	$('#save').attr('disabled', true);
 	$('#name, #keyword, #shortcut').attr('disabled', false);
 	enabled.prop('checked', true).change();
-	$('.iPhoneCheckContainer').hide();
+	$('.toggleBoxContainer').hide();
 	$('#keyword').width(296);
 	$('#actionButton option[value="duplicate"]').remove();
 	Pop.displayShortcut();
@@ -218,12 +218,12 @@ function setShortcut(shortcut) {
 
 // iPhone style checkbox jquery plugin
 (function() {
-  var iOSCheckbox;
-  iOSCheckbox = (function() {
-    function iOSCheckbox(elem, options) {
+  var toggleBox;
+  toggleBox = (function() {
+    function toggleBox(elem, options) {
       var key, opts, value;
       this.elem = $(elem);
-      opts = $.extend({}, iOSCheckbox.defaults, options);
+      opts = $.extend({}, toggleBox.defaults, options);
       for (key in opts) {
         value = opts[key];
         this[key] = value;
@@ -239,10 +239,10 @@ function setShortcut(shortcut) {
       }
       this.initialPosition();
     }
-    iOSCheckbox.prototype.isDisabled = function() {
+    toggleBox.prototype.isDisabled = function() {
       return this.elem.is(':disabled');
     };
-    iOSCheckbox.prototype.wrapCheckboxWithDivs = function() {
+    toggleBox.prototype.wrapCheckboxWithDivs = function() {
       this.elem.wrap("<div class='" + this.containerClass + "' />");
       this.container = this.elem.parent();
       this.offLabel = $("<label class='" + this.labelOffClass + "'>\n  <span>" + this.uncheckedLabel + "</span>\n</label>").appendTo(this.container);
@@ -251,12 +251,12 @@ function setShortcut(shortcut) {
       this.onSpan = this.onLabel.children('span');
       return this.handle = $("<div class='" + this.handleClass + "'>\n  <div class='" + this.handleRightClass + "'>\n    <div class='" + this.handleCenterClass + "' />\n  </div>\n</div>").appendTo(this.container);
     };
-    iOSCheckbox.prototype.disableTextSelection = function() {
+    toggleBox.prototype.disableTextSelection = function() {
       if ($.browser.msie) {
         return $([this.handle, this.offLabel, this.onLabel, this.container]).attr("unselectable", "on");
       }
     };
-    iOSCheckbox.prototype.optionallyResize = function(mode) {
+    toggleBox.prototype.optionallyResize = function(mode) {
       var newWidth, offLabelWidth, onLabelWidth;
       onLabelWidth = this.onLabel.width();
       offLabelWidth = this.offLabel.width();
@@ -273,23 +273,23 @@ function setShortcut(shortcut) {
         });
       }
     };
-    iOSCheckbox.prototype.onMouseDown = function(event) {
+    toggleBox.prototype.onMouseDown = function(event) {
       var x;
       event.preventDefault();
       if (this.isDisabled()) {
         return;
       }
       x = event.pageX || event.originalEvent.changedTouches[0].pageX;
-      iOSCheckbox.currentlyClicking = this.handle;
-      iOSCheckbox.dragStartPosition = x;
-      return iOSCheckbox.handleLeftOffset = parseInt(this.handle.css('left'), 10) || 0;
+      toggleBox.currentlyClicking = this.handle;
+      toggleBox.dragStartPosition = x;
+      return toggleBox.handleLeftOffset = parseInt(this.handle.css('left'), 10) || 0;
     };
-    iOSCheckbox.prototype.onDragMove = function(event, x) {
+    toggleBox.prototype.onDragMove = function(event, x) {
       var newWidth, p;
-      if (iOSCheckbox.currentlyClicking !== this.handle) {
+      if (toggleBox.currentlyClicking !== this.handle) {
         return;
       }
-      p = (x + iOSCheckbox.handleLeftOffset - iOSCheckbox.dragStartPosition) / this.rightSide;
+      p = (x + toggleBox.handleLeftOffset - toggleBox.dragStartPosition) / this.rightSide;
       if (p < 0) {
         p = 0;
       }
@@ -310,25 +310,25 @@ function setShortcut(shortcut) {
         marginLeft: -(1 - p) * this.rightSide
       });
     };
-    iOSCheckbox.prototype.onDragEnd = function(event, x) {
+    toggleBox.prototype.onDragEnd = function(event, x) {
       var p;
-      if (iOSCheckbox.currentlyClicking !== this.handle) {
+      if (toggleBox.currentlyClicking !== this.handle) {
         return;
       }
       if (this.isDisabled()) {
         return;
       }
-      if (iOSCheckbox.dragging) {
-        p = (x - iOSCheckbox.dragStartPosition) / this.rightSide;
+      if (toggleBox.dragging) {
+        p = (x - toggleBox.dragStartPosition) / this.rightSide;
         this.elem.prop('checked', p >= 0.5);
       } else {
         this.elem.prop('checked', !this.elem.prop('checked'));
       }
-      iOSCheckbox.currentlyClicking = null;
-      iOSCheckbox.dragging = null;
+      toggleBox.currentlyClicking = null;
+      toggleBox.dragging = null;
       return this.elem.change();
     };
-    iOSCheckbox.prototype.onChange = function() {
+    toggleBox.prototype.onChange = function() {
       var new_left;
       if (this.isDisabled()) {
         this.container.addClass(this.disabledClass);
@@ -350,7 +350,7 @@ function setShortcut(shortcut) {
         marginLeft: new_left - this.rightSide
       }, this.duration);
     };
-    iOSCheckbox.prototype.attachEvents = function() {
+    toggleBox.prototype.attachEvents = function() {
       var localMouseMove, localMouseUp, self;
       self = this;
       localMouseMove = function(event) {
@@ -370,7 +370,7 @@ function setShortcut(shortcut) {
         return self.onChange.apply(self, arguments);
       });
     };
-    iOSCheckbox.prototype.initialPosition = function() {
+    toggleBox.prototype.initialPosition = function() {
       var offset;
       this.offLabel.css({
         width: this.container.width() - this.containerRadius
@@ -402,58 +402,58 @@ function setShortcut(shortcut) {
         return this.container.addClass(this.disabledClass);
       }
     };
-    iOSCheckbox.prototype.onGlobalMove = function(event) {
+    toggleBox.prototype.onGlobalMove = function(event) {
       var x;
-      if (!(!this.isDisabled() && iOSCheckbox.currentlyClicking)) {
+      if (!(!this.isDisabled() && toggleBox.currentlyClicking)) {
         return;
       }
       event.preventDefault();
       x = event.pageX || event.originalEvent.changedTouches[0].pageX;
-      if (!iOSCheckbox.dragging && (Math.abs(iOSCheckbox.dragStartPosition - x) > this.dragThreshold)) {
-        iOSCheckbox.dragging = true;
+      if (!toggleBox.dragging && (Math.abs(toggleBox.dragStartPosition - x) > this.dragThreshold)) {
+        toggleBox.dragging = true;
       }
       return this.onDragMove(event, x);
     };
-    iOSCheckbox.prototype.onGlobalUp = function(event) {
+    toggleBox.prototype.onGlobalUp = function(event) {
       var x;
-      if (!iOSCheckbox.currentlyClicking) {
+      if (!toggleBox.currentlyClicking) {
         return;
       }
       event.preventDefault();
       x = event.pageX || event.originalEvent.changedTouches[0].pageX;
       return this.onDragEnd(event, x);
     };
-    iOSCheckbox.defaults = {
+    toggleBox.defaults = {
       duration: 200,
       checkedLabel: 'ON',
       uncheckedLabel: 'OFF',
       resizeHandle: true,
       resizeContainer: true,
-      disabledClass: 'iPhoneCheckDisabled',
-      containerClass: 'iPhoneCheckContainer',
-      labelOnClass: 'iPhoneCheckLabelOn',
-      labelOffClass: 'iPhoneCheckLabelOff',
-      handleClass: 'iPhoneCheckHandle',
-      handleCenterClass: 'iPhoneCheckHandleCenter',
-      handleRightClass: 'iPhoneCheckHandleRight',
+      disabledClass: 'toggleBoxDisabled',
+      containerClass: 'toggleBoxContainer',
+      labelOnClass: 'toggleBoxLabelOn',
+      labelOffClass: 'toggleBoxLabelOff',
+      handleClass: 'toggleBoxHandle',
+      handleCenterClass: 'toggleBoxHandleCenter',
+      handleRightClass: 'toggleBoxHandleRight',
       dragThreshold: 5,
       handleMargin: 15,
       handleRadius: 4,
       containerRadius: 5
     };
-    return iOSCheckbox;
+    return toggleBox;
   })();
-  $.iphoneStyle = this.iOSCheckbox = iOSCheckbox;
+  $.iphoneStyle = this.toggleBox = toggleBox;
   $.fn.iphoneStyle = function(options) {
     var checkbox, _i, _len, _ref;
     _ref = this.filter(':checkbox');
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       checkbox = _ref[_i];
-      $(checkbox).data("iphoneStyle", new iOSCheckbox(checkbox, options));
+      $(checkbox).data("iphoneStyle", new toggleBox(checkbox, options));
     }
     return this;
   };
-  $.fn.iOSCheckbox = function(options) {
+  $.fn.toggleBox = function(options) {
     var checkbox, opts, _i, _len, _ref;
     if (options == null) {
       options = {};
@@ -471,7 +471,7 @@ function setShortcut(shortcut) {
     _ref = this.filter(':checkbox');
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       checkbox = _ref[_i];
-      $(checkbox).data("iOSCheckbox", new iOSCheckbox(checkbox, opts));
+      $(checkbox).data("toggleBox", new toggleBox(checkbox, opts));
     }
     return this;
   };

@@ -30,7 +30,7 @@ $(function() {
 	});
 	
 	$('#helpButton').click(function() {
-		gbl.openUrl('http://www.macosxtips.co.uk/keysearch/help', 'foreground');
+		gbl.openUrl('https://github.com/rajprins/keysearch/wiki', 'foreground');
 		safari.self.hide();
 	});
 });

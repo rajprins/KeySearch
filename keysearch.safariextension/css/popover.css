@@ -8,12 +8,9 @@ body {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-user-select: none;
-	border: 1px solid #999;
-	border-radius: 5px;
 	font: 13px "Lucida Grande";
 	margin: 1px;
 	overflow: hidden;
-	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .search body { width: 550px; height: 60px;}
@@ -24,10 +21,9 @@ body {
 
 header {
 	position: relative;
-	background: -webkit-linear-gradient(top, #fcfcfc 0%,#b4b8c1 100%);
+	background: rgb(235,235,235);
 	border-bottom: 1px solid #919298;
-	border-radius: 5px 5px 0 0;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 6px 6px 0 0;
 	height: 36px;
 }
 
@@ -48,17 +44,16 @@ header button {
 	margin: 0;
 	padding: 0 7px;
 	height: 25px;
-	background: -webkit-linear-gradient(top, #b8b8b8 0%,#979797 50%,#8a8a8a 51%,#898989 100%);
-	border-top: 1px solid #838383;
-	border-right: 1px solid #767676;
-	border-left: 1px solid #767676;
-	border-bottom: 1px solid #8b8b8b;
-	color: #F1F1F1;
-	font-weight: bold;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-	border-radius: 4px;
-	font-size: 12px;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+    border: 1px solid;
+	border-radius: 3px;
+    border-top-color:rgb(203,203,203);
+    border-right-color: rgb(195,195,195);
+    border-bottom-color: rgb(177,177,177);
+	border-left-color: rgb(195,195,195);
+	background: white;
+	box-shadow: 0 0px -1px rgba(0, 0, 0, 0.2);
+	font: 12px "Lucida Grande";
+	/*font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;*/
 }
 
 section {
@@ -67,7 +62,6 @@ section {
 }
 
 .keywords section { margin: 0;}
-
 .keywords p {margin: 16px 36px 16px 100px;}
 .settings p {margin: 16px 0 16px 160px;}
 .add p {margin: 10px 0px 10px 180px;}
@@ -201,8 +195,8 @@ section button {
     border-bottom-color: #888888;
     border-left-color: #878787;
     box-shadow: inset 0 1px 0px rgba(0,0,0,0.1);
-    background: -webkit-linear-gradient(top, #cdcdcd 0%,#b9b9b9 100%);
-    border-radius: 4px;
+	background:#b9b9b9;
+    border-radius: 3px;
     height: 50px;
     width: 300px;
     position: relative;
@@ -216,8 +210,8 @@ section button {
     border-bottom-color: #939393;
     border-left-color: #6b6b6b;
     box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    background: -webkit-linear-gradient(top, #ffffff 0%,#e6e6e6 100%);
-    border-radius: 4px;
+    background: #e6e6e6;
+    border-radius: 3px;
     font-size: 10px;
     color: #555555;
     text-shadow: #ffffff 0 1px 1px;
@@ -331,7 +325,7 @@ aside span.listLink.current {
 	color: #fff;
 	font-weight: bold;
 	text-shadow: 0 1px 0 #333;
-	background: -webkit-linear-gradient(top, #5b92d5 0%,#1654ab 100%);
+	background: rgb(50,130,250);
 }
 
 aside span.delete {
@@ -369,10 +363,10 @@ aside #new.current {
 }
 
 #buttonContainer {
-	background-image: url('../images/buttonBack.png');
+	background: rgb(231,231,231);
 	height: 23px;
 	width: 200px;
-	border-radius: 0 0 0 5px;
+	border-radius: 0 0 0 6px;
 }
 
 #plusButton {
@@ -384,7 +378,7 @@ aside #new.current {
 	float: left;
 	border: none;
 	padding: 0;
-	border-radius: 0 0 0 5px;
+	border-radius: 0 0 0 6px;
 }
 
 #plusButton:active {
@@ -417,30 +411,32 @@ aside #new.current {
 #save {
 }
 
-.iPhoneCheckContainer {
+.toggleBoxContainer {
 	position: relative;
-	height: 27px;
+	height: 22px;
 	width: 80px;
 	cursor: pointer;
 	overflow: hidden;
 	float: right;
+	border-radius: 4px;
 }
-.iPhoneCheckContainer input {
+.toggleBoxContainer input {
 	position: absolute;
 	top: 5px;
 	left: 30px;
-    opacity: 0;
+	opacity: 0;
+	border-radius: 4px;
 }
-.iPhoneCheckContainer label {
+.toggleBoxContainer label {
 	white-space: nowrap;
-	font-size: 17px;
-	line-height: 17px !important;
+	font-size: 12px;
+	line-height: 12px !important;
 	font-weight: bold;
 	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	cursor: pointer;
 	display: block;
-	height: 27px;
+	height: 22px;
 	position: absolute;
 	width: auto;
 	top: 0;
@@ -448,55 +444,67 @@ aside #new.current {
 	overflow: hidden;
 	margin: 0 !important;
 	text-align: left;
+	border-radius: 4px;
 }
-.iPhoneCheckContainer, .iPhoneCheckContainer label {
+.toggleBoxContainer, .toggleBoxContainer label {
 	user-select: none;
-    -khtml-user-select: none;
+	-khtml-user-select: none;
+	border-radius: 4px;
 }
-.iPhoneCheckDisabled {
+.toggleBoxDisabled {
 	opacity: 0.5;
+	border-radius: 4px;
 }
-label.iPhoneCheckLabelOn {
+label.toggleBoxLabelOn {
 	color: white;
-	background: url('../images/iphone-style-checkboxes/on.png?1284697268') no-repeat;
+	background: #3282fa;
 	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 	left: 0;
 	padding-top: 5px;
+	border-color: rgb(172,172,172);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 4px;
 }
-label.iPhoneCheckLabelOn span {
-    padding-left: 8px;
+label.toggleBoxLabelOn span {
+	padding-left: 8px;
+	border-radius: 4px;
 }
-label.iPhoneCheckLabelOff {
+label.toggleBoxLabelOff {
 	color: #8b8b8b;
-	background: url('../images/iphone-style-checkboxes/off.png?1284697268') no-repeat right 0;
+	background: #b9b9b9;
 	text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.6);
 	text-align: right;
 	right: 0;
+	border-radius: 4px;
 }
-label.iPhoneCheckLabelOff span {
-    padding-right: 8px;
+label.toggleBoxLabelOff span {
+	padding-right: 8px;
+	border-radius: 4px;
 }
-.iPhoneCheckHandle {
+.toggleBoxHandle {
 	display: block;
-	height: 27px;
+	height: 20px;
 	cursor: pointer;
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 30px;
-	background: url('../images/iphone-style-checkboxes/slider_left.png?1284697268') no-repeat;
+	background: white;
+	border: 1px solid rgb(172,172,172);
 	padding-left: 3px;
+	border-radius: 3px;
 }
-.iPhoneCheckHandleRight {
+.toggleBoxHandleRight {
 	height: 100%;
 	width: 100%;
 	padding-right: 3px;
-	background: url('../images/iphone-style-checkboxes/slider_right.png?1284697268') no-repeat right 0;
+	border-radius: 3px;
 }
-.iPhoneCheckHandleCenter {
+.toggleBoxHandleCenter {
 	height: 100%;
 	width: 100%;
-	background: url('../images/iphone-style-checkboxes/slider_center.png?1284697268');
+	border-radius: 3px;
 }
 
 /* @end */
