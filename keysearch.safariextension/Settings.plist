@@ -4,13 +4,41 @@
 <array>
 	<dict>
 		<key>DefaultValue</key>
-		<string>false</string>
+		<real>10083</real>
 		<key>Key</key>
-		<string>openSettings</string>
+		<string>shortcut</string>
+	</dict>
+	<dict>
+		<key>Key</key>
+		<string>version</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>current</string>
+		<key>Key</key>
+		<string>resultsType</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>popover</string>
+		<key>Key</key>
+		<string>shortcutAction</string>
+	</dict>
+	<dict>
 		<key>Title</key>
-		<string>Click here to open the KeySearch settings page and edit your rules. You can also access the settings page by clicking on the KeySearch toolbar button.</string>
+		<string>Access settings by clicking the KeySearch button</string>
 		<key>Type</key>
-		<string>CheckBox</string>
+		<string>Group</string>
+	</dict>
+	<dict>
+		<key>Type</key>
+		<string>Separator</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<false/>
+		<key>Key</key>
+		<string>enableAddressBar</string>
 	</dict>
 </array>
 </plist>

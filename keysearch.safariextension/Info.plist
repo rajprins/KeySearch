@@ -9,7 +9,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>KeySearch</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.twomobiledudes.keysearch</string>
+	<string>com.macosxtips.keysearch</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
@@ -29,30 +29,57 @@
 				<string>Create a keyword for this search</string>
 			</dict>
 		</array>
-		<key>Database Quota</key>
-		<integer>1048576</integer>
 		<key>Global Page</key>
 		<string>global.html</string>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>search.html</string>
+				<key>Height</key>
+				<real>500</real>
+				<key>Identifier</key>
+				<string>keySearchPopover</string>
+				<key>Width</key>
+				<real>800</real>
+			</dict>
+		</array>
 		<key>Toolbar Items</key>
 		<array>
 			<dict>
 				<key>Command</key>
-				<string>keySearchButton</string>
+				<string></string>
 				<key>Identifier</key>
 				<string>keySearchButton</string>
 				<key>Image</key>
-				<string>toolbar.png</string>
+				<string>images/toolbar.png</string>
 				<key>Label</key>
 				<string>KeySearch</string>
 				<key>Palette Label</key>
 				<string>KeySearch</string>
+				<key>Popover</key>
+				<string>keySearchPopover</string>
 				<key>Tool Tip</key>
 				<string>KeySearch</string>
 			</dict>
 		</array>
 	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>js/injected.js</string>
+			</array>
+			<key>Start</key>
+			<array>
+				<string>js/jquery-1.7.2.min.js</string>
+			</array>
+		</dict>
+	</dict>
 	<key>Description</key>
-	<string>Use keywords to quickly search any site from the address bar</string>
+	<string>Use keywords to quickly search any site from the toolbar</string>
 	<key>DeveloperIdentifier</key>
 	<string>TP737ZY7FM</string>
 	<key>ExtensionInfoDictionaryVersion</key>
@@ -64,8 +91,12 @@
 			<key>Include Secure Pages</key>
 			<true/>
 			<key>Level</key>
-			<string>None</string>
+			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://www.macosxtips.co.uk/keysearch/keysearch.plist</string>
+	<key>Website</key>
+	<string>https://github.com/rajprins/keysearch</string>
 </dict>
 </plist>
