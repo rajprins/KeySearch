@@ -219,6 +219,7 @@ function setShortcut(shortcut) {
 // iPhone style checkbox jquery plugin
 (function() {
   var toggleBox;
+
   toggleBox = (function() {
     function toggleBox(elem, options) {
       var key, opts, value;
@@ -239,9 +240,11 @@ function setShortcut(shortcut) {
       }
       this.initialPosition();
     }
+
     toggleBox.prototype.isDisabled = function() {
       return this.elem.is(':disabled');
     };
+
     toggleBox.prototype.wrapCheckboxWithDivs = function() {
       this.elem.wrap("<div class='" + this.containerClass + "' />");
       this.container = this.elem.parent();
@@ -251,11 +254,13 @@ function setShortcut(shortcut) {
       this.onSpan = this.onLabel.children('span');
       return this.handle = $("<div class='" + this.handleClass + "'>\n  <div class='" + this.handleRightClass + "'>\n    <div class='" + this.handleCenterClass + "' />\n  </div>\n</div>").appendTo(this.container);
     };
+
     toggleBox.prototype.disableTextSelection = function() {
       if ($.browser.msie) {
         return $([this.handle, this.offLabel, this.onLabel, this.container]).attr("unselectable", "on");
       }
     };
+
     toggleBox.prototype.optionallyResize = function(mode) {
       var newWidth, offLabelWidth, onLabelWidth;
       onLabelWidth = this.onLabel.width();
@@ -273,6 +278,7 @@ function setShortcut(shortcut) {
         });
       }
     };
+
     toggleBox.prototype.onMouseDown = function(event) {
       var x;
       event.preventDefault();
@@ -284,6 +290,7 @@ function setShortcut(shortcut) {
       toggleBox.dragStartPosition = x;
       return toggleBox.handleLeftOffset = parseInt(this.handle.css('left'), 10) || 0;
     };
+
     toggleBox.prototype.onDragMove = function(event, x) {
       var newWidth, p;
       if (toggleBox.currentlyClicking !== this.handle) {
@@ -310,6 +317,7 @@ function setShortcut(shortcut) {
         marginLeft: -(1 - p) * this.rightSide
       });
     };
+
     toggleBox.prototype.onDragEnd = function(event, x) {
       var p;
       if (toggleBox.currentlyClicking !== this.handle) {
@@ -328,6 +336,7 @@ function setShortcut(shortcut) {
       toggleBox.dragging = null;
       return this.elem.change();
     };
+
     toggleBox.prototype.onChange = function() {
       var new_left;
       if (this.isDisabled()) {
@@ -350,17 +359,20 @@ function setShortcut(shortcut) {
         marginLeft: new_left - this.rightSide
       }, this.duration);
     };
+
     toggleBox.prototype.attachEvents = function() {
       var localMouseMove, localMouseUp, self;
       self = this;
       localMouseMove = function(event) {
         return self.onGlobalMove.apply(self, arguments);
       };
+
       localMouseUp = function(event) {
         self.onGlobalUp.apply(self, arguments);
         $(document).unbind('mousemove touchmove', localMouseMove);
         return $(document).unbind('mouseup touchend', localMouseUp);
       };
+
       this.container.bind('mousedown touchstart', function(event) {
         self.onMouseDown.apply(self, arguments);
         $(document).bind('mousemove touchmove', localMouseMove);
@@ -370,6 +382,7 @@ function setShortcut(shortcut) {
         return self.onChange.apply(self, arguments);
       });
     };
+
     toggleBox.prototype.initialPosition = function() {
       var offset;
       this.offLabel.css({
@@ -402,6 +415,7 @@ function setShortcut(shortcut) {
         return this.container.addClass(this.disabledClass);
       }
     };
+
     toggleBox.prototype.onGlobalMove = function(event) {
       var x;
       if (!(!this.isDisabled() && toggleBox.currentlyClicking)) {
@@ -414,6 +428,7 @@ function setShortcut(shortcut) {
       }
       return this.onDragMove(event, x);
     };
+
     toggleBox.prototype.onGlobalUp = function(event) {
       var x;
       if (!toggleBox.currentlyClicking) {
@@ -423,6 +438,7 @@ function setShortcut(shortcut) {
       x = event.pageX || event.originalEvent.changedTouches[0].pageX;
       return this.onDragEnd(event, x);
     };
+
     toggleBox.defaults = {
       duration: 200,
       checkedLabel: 'ON',

@@ -33,7 +33,6 @@ header h1 {
 	line-height: 15px;
 	margin: 0;
 	padding: 10px 0;
-	text-shadow: 0 1px 0 #efefef;
 	text-align: center;
 }
 
@@ -45,7 +44,7 @@ header button {
 	padding: 0 7px;
 	height: 25px;
     border: 1px solid;
-	border-radius: 3px;
+	border-radius: 4px;
     border-top-color:rgb(203,203,203);
     border-right-color: rgb(195,195,195);
     border-bottom-color: rgb(177,177,177);
@@ -53,7 +52,6 @@ header button {
 	background: white;
 	box-shadow: 0 0px -1px rgba(0, 0, 0, 0.2);
 	font: 12px "Lucida Grande";
-	/*font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;*/
 }
 
 section {
@@ -70,7 +68,7 @@ section label {
 	float: left;
 	padding: 0;
 	text-align: right;
-	font-size: 13px;
+	font: 13px "Lucida Grande";
 }
 
 .keywords section label {margin: 0 0 0 -80px; width: 60px; line-height: 24px;}
@@ -80,7 +78,7 @@ section label {
 
 section span.description {
 	display: block;
-	font-size: 11px;
+	font: 11px "Lucida Grande";
 	line-height: 11px;
 	padding: 2px 0 0 0;
 	color: #888;
@@ -214,7 +212,6 @@ section button {
     border-radius: 3px;
     font-size: 10px;
     color: #555555;
-    text-shadow: #ffffff 0 1px 1px;
     padding: 25px 14px 3px 5px;
     margin: 3px;
     float: left;
@@ -224,7 +221,6 @@ section button {
 	display: none;
     font-size: 14px;
     color: #444444;
-    text-shadow: #ffffff 0 1px 1px;
     position: absolute;
     top: 17px;
     width: 100%;
@@ -324,7 +320,6 @@ aside span.listLink.disabled {
 aside span.listLink.current {
 	color: #fff;
 	font-weight: bold;
-	text-shadow: 0 1px 0 #333;
 	background: rgb(50,130,250);
 }
 
@@ -414,25 +409,24 @@ aside #new.current {
 .toggleBoxContainer {
 	position: relative;
 	height: 22px;
-	width: 80px;
+	width: 70px;
 	cursor: pointer;
 	overflow: hidden;
 	float: right;
+	margin-top: 2px;
 	border-radius: 4px;
 }
+
 .toggleBoxContainer input {
 	position: absolute;
-	top: 5px;
-	left: 30px;
-	opacity: 0;
-	border-radius: 4px;
 }
+
 .toggleBoxContainer label {
 	white-space: nowrap;
-	font-size: 12px;
 	line-height: 12px !important;
 	font-weight: bold;
-	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-family: "Helvetica Neue";
 	text-transform: uppercase;
 	cursor: pointer;
 	display: block;
@@ -446,42 +440,48 @@ aside #new.current {
 	text-align: left;
 	border-radius: 4px;
 }
+
 .toggleBoxContainer, .toggleBoxContainer label {
 	user-select: none;
 	-khtml-user-select: none;
 	border-radius: 4px;
 }
+
 .toggleBoxDisabled {
 	opacity: 0.5;
 	border-radius: 4px;
+	border-color: rgb(172,172,172);
 }
+
 label.toggleBoxLabelOn {
 	color: white;
 	background: #3282fa;
-	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
 	left: 0;
 	padding-top: 5px;
-	border-color: rgb(172,172,172);
-	border-style: solid;
-	border-width: 1px;
+	border: 1px solid rgb(172,172,172);
 	border-radius: 4px;
 }
+
 label.toggleBoxLabelOn span {
 	padding-left: 8px;
 	border-radius: 4px;
 }
+
 label.toggleBoxLabelOff {
-	color: #8b8b8b;
-	background: #b9b9b9;
-	text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.6);
+	color: white;
+	background: rgb(172,172,172);
 	text-align: right;
 	right: 0;
+	border: 1px solid rgb(172,172,172);
 	border-radius: 4px;
 }
+
 label.toggleBoxLabelOff span {
 	padding-right: 8px;
 	border-radius: 4px;
+	border: 1px solid rgb(172,172,172);
 }
+
 .toggleBoxHandle {
 	display: block;
 	height: 20px;
@@ -489,22 +489,24 @@ label.toggleBoxLabelOff span {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 30px;
+	width: 25px;
 	background: white;
-	border: 1px solid rgb(172,172,172);
 	padding-left: 3px;
-	border-radius: 3px;
+	border-radius: 4px;
+	border: 1px solid rgb(172,172,172);
 }
+
 .toggleBoxHandleRight {
 	height: 100%;
 	width: 100%;
 	padding-right: 3px;
-	border-radius: 3px;
+	border-radius: 4px;
 }
+
 .toggleBoxHandleCenter {
 	height: 100%;
 	width: 100%;
-	border-radius: 3px;
+	border-radius: 4px;
 }
 
 /* @end */
