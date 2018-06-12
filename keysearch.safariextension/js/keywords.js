@@ -459,7 +459,9 @@ function setShortcut(shortcut) {
     };
     return toggleBox;
   })();
+
   $.iphoneStyle = this.toggleBox = toggleBox;
+  
   $.fn.iphoneStyle = function(options) {
     var checkbox, _i, _len, _ref;
     _ref = this.filter(':checkbox');
@@ -469,6 +471,7 @@ function setShortcut(shortcut) {
     }
     return this;
   };
+
   $.fn.toggleBox = function(options) {
     var checkbox, opts, _i, _len, _ref;
     if (options == null) {
