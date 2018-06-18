@@ -61,7 +61,7 @@ var Store = {
     
     upgrade: function() {
     
-    	// Switch to ext.settings from localStorage (since 2.2.1)
+    	// Switch to ext.settings from localStorage
     	for (var i=0; i < localStorage.length; i++) {
 			var jsonString = localStorage.getItem(localStorage.key(i));
 			if (jsonString) {
@@ -71,8 +71,6 @@ var Store = {
 		}
 		localStorage.clear()
     
-    	// Add 'name' field if missing (since 1.3)
-    	// Add 'shortcut' field if missing (since 1.5.1)
         Store.each(function(data) {
 			if (!data.name) {
 				data.name = data.keyword;
