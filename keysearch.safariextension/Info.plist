@@ -29,6 +29,8 @@
 				<string>Create a keyword for this search</string>
 			</dict>
 		</array>
+		<key>Database Quota</key>
+		<integer>1048576</integer>
 		<key>Global Page</key>
 		<string>global.html</string>
 		<key>Popovers</key>
@@ -97,6 +99,6 @@
 	<key>Update Manifest URL</key>
 	<string>https://raw.githubusercontent.com/rajprins/KeySearch/master/keysearch.safariextension/keysearch.plist</string>
 	<key>Website</key>
-	<string></string>
+	<string>https://github.com/rajprins/KeySearch</string>
 </dict>
 </plist>
