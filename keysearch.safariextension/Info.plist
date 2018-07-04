@@ -99,6 +99,6 @@
 	<key>Update Manifest URL</key>
 	<string>https://raw.githubusercontent.com/rajprins/KeySearch/master/keysearch.safariextension/keysearch.plist</string>
 	<key>Website</key>
-	<string>https://github.com/rajprins/KeySearch</string>
+	<string>https://rajprins.github.io/KeySearch/</string>
 </dict>
 </plist>
