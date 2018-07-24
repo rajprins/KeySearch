@@ -36,7 +36,7 @@
 	</dict>
 	<dict>
 		<key>DefaultValue</key>
-		<false/>
+		<string>1</string>
 		<key>Key</key>
 		<string>enableAddressBar</string>
 	</dict>
