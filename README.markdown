@@ -9,7 +9,7 @@
 While browsing the web, just press <kbd title="Control-S">^S</kbd> (or click the toolbar button) to bring up the KeySearch bar. Type a keyword, then your search query, and hit <kbd title="Return">⏎</kbd>, and KeySearch will find the site you want to search and perform the search for you. 
 
 ## Download & Installation
-Get it [here](https://github.com/rajprins/KeySearch/releases/download/v1.0.0/keysearch.safariextz). Double-click the .safariextz file to install. Done.
+Get it [here](https://github.com/rajprins/KeySearch/releases/download/v1.0.1/keysearch.safariextz). Double-click the .safariextz file to install. Done.
 
 ## Examples
 
